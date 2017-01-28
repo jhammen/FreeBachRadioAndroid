@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FreeBachRadio</string>
+    <string name="composer_label">Composer:</string>
+    <string name="sample_composer_name">J.S. Bach</string>
+    <string name="sample_release_name">Release Name</string>
+    <string name="performer_label">Performer:</string>
+    <string name="sample_performer_name">Performer Name</string>
+    <string name="release_label">Release:</string>
+    <string name="sample_piece_name">Piece Name</string>
 </resources>
