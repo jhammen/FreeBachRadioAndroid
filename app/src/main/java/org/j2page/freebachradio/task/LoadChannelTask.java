@@ -33,7 +33,7 @@ public class LoadChannelTask extends AsyncTask<String, Void, Boolean> {
         try {
             channel = params[0].toLowerCase();
             ApplicationInfo ai = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
-            String siteBase = (String)ai.metaData.get("siteBase");
+            String siteBase = (String) ai.metaData.get("siteBase");
             URL url = new URL(siteBase + "/" + channel + ".json");
             loadJson(url); // TODO: if necessary
             return true;
@@ -49,10 +49,11 @@ public class LoadChannelTask extends AsyncTask<String, Void, Boolean> {
 
     private void loadJson(URL url) throws IOException {
         InputStream is = null;
+        SQLiteDatabase db = null;
         try {
             // get database
             DbHelper dbHelper = new DbHelper(context);
-            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            db = dbHelper.getWritableDatabase();
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setUseCaches(true);
@@ -69,6 +70,7 @@ public class LoadChannelTask extends AsyncTask<String, Void, Boolean> {
             if (is != null) {
                 is.close();
             }
+            db.close();
         }
     }
 

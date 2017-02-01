@@ -10,7 +10,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "PsyApp.db";
+    public static final String DATABASE_NAME = "FreeBackRadio.db";
     private static final String SQL_CREATE_TABLE =
             "CREATE TABLE " + TrackColumns.TABLE_NAME + " (" +
                     TrackColumns._ID + " INTEGER PRIMARY KEY," +
