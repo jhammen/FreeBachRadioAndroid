@@ -13,7 +13,7 @@
 
         <meta-data
             android:name="siteBase"
-            android:value="http://192.168.1.122/fbrsite" />
+            android:value="https://jhammen.github.io/fbr-site/" />
 
         <activity android:name=".PlayActivity">
             <intent-filter>
